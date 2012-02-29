@@ -17,6 +17,7 @@ package com.liferay.contacts.util;
 import com.liferay.portal.kernel.util.StringBundler;
 import com.liferay.portal.kernel.util.StringPool;
 import com.liferay.portal.kernel.util.Validator;
+import com.liferay.portal.kernel.util.PortalClassLoaderUtil;
 import com.liferay.portal.model.Address;
 import com.liferay.portal.model.Contact;
 import com.liferay.portal.model.Country;
@@ -34,12 +35,40 @@ import com.liferay.portal.service.PhoneLocalServiceUtil;
 import com.liferay.portal.service.RegionServiceUtil;
 import com.liferay.portal.service.WebsiteLocalServiceUtil;
 
+import java.lang.reflect.Field;
+
+import java.util.Arrays;
 import java.util.List;
 
 /**
  * @author Ryan Park
  */
 public class ContactsUtil {
+
+	public static String[] getPortalPropertiesValue(String key)
+		throws Exception {
+
+		String[] propsValue = null;
+
+		try {
+			ClassLoader portalClassLoader =
+				PortalClassLoaderUtil.getClassLoader();
+
+			Class<?> targetClass = portalClassLoader.loadClass(
+				"com.liferay.portal.util.PropsValues");
+
+			Field field = targetClass.getField(key);
+
+			Object test = null;
+
+			propsValue = (String[])field.get(test);
+
+		}
+		catch (Exception e) {
+		}
+
+		return propsValue;
+	}
 
 	public static String getVCard(User user) throws Exception {
 		StringBundler sb = new StringBundler();
@@ -68,6 +97,35 @@ public class ContactsUtil {
 		}
 
 		return sb.toString();
+	}
+
+	public static boolean hasInstantMessenger(Contact contact) {
+		if (Validator.isNotNull(contact.getAimSn()) ||
+			Validator.isNotNull(contact.getIcqSn()) ||
+			Validator.isNotNull(contact.getJabberSn()) ||
+			Validator.isNotNull(contact.getMsnSn()) ||
+			Validator.isNotNull(contact.getSkypeSn()) ||
+			Validator.isNotNull(contact.getYmSn())) {
+
+			return true;
+		}
+
+		return false;
+	}
+
+	public static boolean hasSocialNetwork(Contact contact) {
+		if (Validator.isNotNull(contact.getFacebookSn()) ||
+			Validator.isNotNull(contact.getMySpaceSn()) ||
+			Validator.isNotNull(contact.getTwitterSn())) {
+
+			return true;
+		}
+
+		return false;
+	}
+
+	public static boolean isMyProfile(User currentUser, User profileUser) {
+		return currentUser.getUserId() == profileUser.getUserId();
 	}
 
 	private static String _getAddresses(User user) throws Exception {
