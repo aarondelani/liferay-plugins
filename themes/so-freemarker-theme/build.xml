@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<!DOCTYPE project>
+
+<project name="so-freemarker-theme" basedir="." default="deploy">
+	<import file="../build-common-theme.xml" />
+
+	<property name="theme.type" value="ftl"></property>
+	<property name="theme.parent" value="_styled" />
+</project>
