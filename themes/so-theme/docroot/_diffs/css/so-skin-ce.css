@@ -158,6 +158,44 @@ a:hover {
 	}
 }
 
+.ie7 #content {
+	#so-sidebar {
+		.portlet-msg-info {
+			overflow: hidden;
+		}
+
+		.site-list li {
+			overflow: hidden;
+
+			span {
+				padding: 0;
+
+				a {
+					margin: 0;
+				}
+			}
+		}
+	}
+
+	#so-context {
+		margin: 0 -1px -1px 0;
+
+		.portlet-column {
+			border-left: 1px solid $gray-dark;
+
+			.portlet-column-content {
+				margin-left: -1px;
+			}
+		}
+	}
+
+	.portlet-layout .portlet-column-only {
+		&, .portlet-column-content {
+			border-width: 0 ;
+		}
+	}
+}
+
 /* ---------- Navigation ---------- */
 
 #navigation {
@@ -264,6 +302,7 @@ a:hover {
 
 #so-sidebar {
 	border-right: 1px solid $gray-dark;
+	z-index: 3;
 
 	.portlet-msg, .portlet-msg-alert, .portlet-msg-error, .portlet-msg-info, .portlet-msg-success {
 		margin: 0 0 10px;
@@ -287,6 +326,7 @@ a:hover {
 		display: none;
 		position: absolute;
 		right: 10px;
+		white-space: nowrap;
 
 		.aui-icon-edit {
 			background-image: url(../images/common/edit.png);
@@ -1106,6 +1146,10 @@ input[type=button], input[type=reset], input[type=submit], .aui-button button, .
 	}
 }
 
+.ie7 .portlet-blogs .search-form {
+	float: right;
+}
+
 /* Blogs Aggregator */
 
 .portlet-blogs-aggregator {
@@ -1250,6 +1294,17 @@ input[type=button], input[type=reset], input[type=submit], .aui-button button, .
 	p {
 		word-wrap: break-word;
 	}
+
+	.lfr-top {
+		.aui-button {
+			display: inline-block;
+			margin-top: 10px;
+		}
+
+		.lfr-search-container {
+			margin-right: 10px;
+		}
+	}
 }
 
 .portlet-column-content-only {
@@ -1273,6 +1328,8 @@ input[type=button], input[type=reset], input[type=submit], .aui-button button, .
 
 	.toolbar {
 		border-bottom-width: 0;
+		margin-left: 1px;
+		width: auto;
 	}
 
 	.lfr-app-column-view {
@@ -1381,6 +1438,15 @@ input[type=button], input[type=reset], input[type=submit], .aui-button button, .
 
 .portlet-column-only .contacts-portlet .contacts-profile {
 	border-bottom-width: 1px;
+}
+
+.ie7 .contacts-portlet .contacts-list {
+	border-right: 1px solid $gray-dark;
+	margin-left: -1px;
+
+	.contacts-list-content {
+		border-right-width: 0;
+	}
 }
 
 /* Documents and Images Library */
@@ -1538,6 +1604,18 @@ input[type=button], input[type=reset], input[type=submit], .aui-button button, .
 	.document-display-style.display-icon {
 		margin: 0 0 5px 5px;
 		width: 195px;
+	}
+}
+
+.ie7 .portlet-document-library {
+	margin-right: 1px;
+
+	.navigation-pane-content {
+		border-right-width: 0;
+	}
+
+	.context-pane {
+		border-left: 1px solid $gray-dark;
 	}
 }
 
@@ -1801,13 +1879,17 @@ input[type=button], input[type=reset], input[type=submit], .aui-button button, .
 .portlet-message-boards, .portlet-wiki {
 	border-left: 1px solid $gray-dark;
 
+	.top-links-container .top-link{
+		vertical-align: middle;
+	}
+
 	.portlet-msg-success {
 		border-width: 0 0 1px;
 		margin: -10px -10px 10px;
 	}
 
 	.portlet-borderless-container .portlet-body {
-		padding: 10px;
+		margin: 10px;
 	}
 
 	.page-search {
