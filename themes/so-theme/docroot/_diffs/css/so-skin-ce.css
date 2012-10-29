@@ -270,6 +270,50 @@ a:hover {
 	padding: 0;
 }
 
+.ie7 #so-sidebar {
+	.profile-image {
+		float: left;
+	}
+
+	.profile-name {
+		margin: 15px 0;
+	}
+
+	#navigation {
+		clear: both;
+
+		ul li {
+			margin-top: -2px;
+		}
+	}
+
+	hr {
+		color: #FFF;
+	}
+
+	.portlet-msg-info {
+		overflow: hidden;
+		position: relative;
+
+		.hide-notice {
+			position: absolute;
+			right: 7px;
+		}
+	}
+
+	.site-list li {
+		overflow: hidden;
+
+		span {
+			padding: 0;
+
+			a {
+				margin: 0;
+			}
+		}
+	}
+}
+
 /* User Detail Structure */
 
 .so-user-detail {
@@ -306,6 +350,7 @@ a:hover {
 		display: none;
 		position: absolute;
 		right: 10px;
+		white-space: nowrap;
 
 		.aui-icon-edit {
 			background-image: url(../images/common/edit.png);
@@ -862,6 +907,10 @@ input[type=button], input[type=reset], input[type=submit], .aui-button button, .
 	text-decoration: none;
 }
 
+.ie7 .taglib-ratings div div {
+	overflow: hidden;
+}
+
 /* ---------- Portlet ---------- */
 
 /* Dockbar */
@@ -1130,6 +1179,14 @@ input[type=button], input[type=reset], input[type=submit], .aui-button button, .
 	}
 }
 
+.ie7 .portlet-blogs .search-form {
+	float: right;
+
+	.aui-button {
+		padding-left: 3px;
+	}
+}
+
 /* Blogs Aggregator */
 
 .portlet-blogs-aggregator {
@@ -1274,6 +1331,17 @@ input[type=button], input[type=reset], input[type=submit], .aui-button button, .
 	p {
 		word-wrap: break-word;
 	}
+
+	.lfr-top {
+		.aui-button {
+			display: inline-block;
+			margin-top: 10px;
+		}
+
+		.lfr-search-container {
+			margin-right: 10px;
+		}
+	}
 }
 
 .portlet-column-content-only {
@@ -1281,6 +1349,10 @@ input[type=button], input[type=reset], input[type=submit], .aui-button button, .
 		max-width: 550px;
 		padding: 10px;
 	}
+}
+
+.ie7 .portlet-calendar {
+	margin-left: -1px;
 }
 
 /*  Contacts Portlet  */
@@ -1369,18 +1441,8 @@ input[type=button], input[type=reset], input[type=submit], .aui-button button, .
 		float: none;
 	}
 
-	.social-relations {
-		margin-left: 1px;
-	}
-
-	.lfr-app-column-view {
-		.contacts-profile .lfr-contact-grid-item {
-			padding-top: 10px;
-		}
-
-		.social-relations {
-			margin-left: 0;
-		}
+	.lfr-app-column-view .contacts-profile .lfr-contact-grid-item {
+		padding-top: 10px;
 	}
 
 	.projects {
@@ -1405,6 +1467,21 @@ input[type=button], input[type=reset], input[type=submit], .aui-button button, .
 
 .portlet-column-only .contacts-portlet .contacts-profile {
 	border-bottom-width: 1px;
+}
+
+.ie7 .contacts-portlet {
+	.contacts-profile {
+		margin-bottom: 0;
+	}
+
+	.contacts-list {
+		border-right: 1px solid $gray-dark;
+		margin-left: -1px;
+
+		.contacts-list-content {
+			border-right-width: 0;
+		}
+	}
 }
 
 /* Documents and Images Library */
@@ -1571,6 +1648,18 @@ input[type=button], input[type=reset], input[type=submit], .aui-button button, .
 
 .ie7 {
 	.portlet-document-library, .portlet-document-library-display {
+		margin-right: 1px;
+
+		.navigation-pane-content {
+			border-right-width: 0;
+			margin-right: -1px;
+		}
+
+		.search-button-container {
+			margin-top: 0;
+			width: 192px;
+		}
+
 		.document-entries-paginator {
 			a {
 				line-height: 0;
@@ -1906,13 +1995,17 @@ input[type=button], input[type=reset], input[type=submit], .aui-button button, .
 .portlet-message-boards, .portlet-wiki {
 	border-left: 1px solid $gray-dark;
 
+	.top-links-container .top-link{
+		vertical-align: middle;
+	}
+
 	.portlet-msg-success {
 		border-width: 0 0 1px;
 		margin: -10px -10px 10px;
 	}
 
 	.portlet-borderless-container .portlet-body {
-		padding: 10px;
+		margin: 10px;
 	}
 
 	.page-search {
@@ -2051,6 +2144,10 @@ input[type=button], input[type=reset], input[type=submit], .aui-button button, .
 	.messages-content {
 		min-height: 400px;
 	}
+}
+
+.ie7 .private-messaging-portlet {
+	margin-left: 0;
 }
 
 /* Recent Bloggers  */
@@ -2287,6 +2384,16 @@ input[type=button], input[type=reset], input[type=submit], .aui-button button, .
 
 .ie .tasks-portlet {
 	zoom: 1;
+}
+
+.ie7 .tasks-portlet .control-wrapper {
+	overflow: hidden;
+	position: relative;
+
+	.filter-tasks {
+		position: absolute;
+		right: 7px;
+	}
 }
 
 /* Wiki */
