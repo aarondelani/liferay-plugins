@@ -19,7 +19,6 @@
 
 	.user-notifications-list {
 		list-style: none;
-		margin: 0;
 
 		.message {
 			text-align: center;
@@ -234,4 +233,11 @@
 .aui .dockbar .nav li.dropdown.dockbar-user-notifications .dropdown-menu {
 	left: auto;
 	right: 0;
+
+	&.pull-right {
+		&:after {
+			right: 20px;
+		}
+	}
+
 }
