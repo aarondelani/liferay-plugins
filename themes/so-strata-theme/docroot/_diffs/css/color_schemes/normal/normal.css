@@ -483,12 +483,16 @@ a {
 
 	#toggleDockbar {
 		border-left: 1px solid $defaultBorderColor;
+		display: block;
 		float: right;
-		margin: -15px -1.25em -26px 1em;
-		padding: 20px 1.25em;
+		height: 52px;
+		margin: -0.75em -1.45em -0.85em 1em;
+		overflow: visible;
+		width: 52px;
 
 		img {
 			height: 16px;
+			padding: 1.35em;
 			width: 16px;
 		}
 	}
@@ -725,18 +729,6 @@ div#navigation {
 		border-bottom-color: #D7D7D7;
 		border-left-color: transparent;
 		border-right-color: transparent;
-	}
-}
-
-.taglib-search-iterator .results-row {
-	td, th {
-		&.first {
-			border-left-width: 0;
-		}
-
-		&.last {
-			border-right-width: 0;
-		}
 	}
 }
 
@@ -1618,7 +1610,7 @@ div#navigation {
 	}
 
 	.private-messaging-container {
-		.results-grid, .results-grid table.taglib-search-iterator, .results-grid .results-row td, .results-grid .results-row.alt td, .thread .results-row {
+		.results-grid, .results-grid .results-row td, .results-grid .results-row.alt td, .thread .results-row {
 			border-left-width: 0;
 			border-right-width: 0;
 			border-top-width: 0;
